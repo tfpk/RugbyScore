@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentation</title>
+    <link type="text/css" rel="stylesheet" href="Styles/header.css" />
+    <script type="text/javascript" src="Scripts/header_time.js"></script>
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 2000 )">
+    <div id="header">
+        <div class="left">
+            <span>
+                <img class="header" id="header_img" src="Logos/SydneyGrammar.png"/>
+            </span>
+            <span class="header" id="header_title">
+                House
+            </span>
+        </div>
+        <div class="right">
+            <p class="header" id="header_clock"></p>
+        </div>
+        <div class="middle">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+</html>

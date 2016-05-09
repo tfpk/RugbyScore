@@ -1,0 +1,10 @@
+h1 {
+    font-size: 3em;
+}
+.center {
+    text-align: center;
+}
+td {
+    font-size: 1.5em;
+    border: 1px #000 solid;
+}

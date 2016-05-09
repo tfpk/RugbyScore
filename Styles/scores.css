@@ -1,0 +1,75 @@
+body {
+    background-color: #000000;
+}
+#body {
+    padding: 10px;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+thead {
+}
+#board {
+    width: 100%
+}
+#board td:nth-child(2n+1) {
+    width: 40%
+}
+#board td {
+    vertical-align: top;
+}
+#half_text{
+    color: #edb100;
+    font-size: 5em;
+}
+#header_clock{
+    color: #edb100;
+    font-size: 6em;
+}
+#A_image {
+    float: left;
+    display: inline-block;
+    overflow: auto;
+    width: 20%;
+}
+#B_image {
+    float: right;
+    display: inline-block;
+    overflow: auto;
+    width: 20%;
+}
+#A_title_text {
+    float: right;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 5em;
+    width: 80%;
+}
+#B_title_text {
+    float: left;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 5em;
+    width: 80%;
+}
+#A_total_score {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#B_total_score {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.text {    font-size: 8em;
+    color: #ffffff;
+}
+.score {
+    color: #edb100;
+    font-weight: bold;
+    font-size: 11em;
+}

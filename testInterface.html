@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    function open_url(){
+        document.getElementById('frame').src = document.getElementById('site').value;
+    }
+</script>
+URL: <input id="site" type="url" /> <button onclick="open_url()">Open URL</button>
+<iframe id="frame" width="2048" height="1152"></iframe>
+</body>
+</html>

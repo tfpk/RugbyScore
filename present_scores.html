@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentation</title>
+    <link type="text/css" rel="stylesheet" href="Styles/header.css" />
+    <link type="text/css" rel="stylesheet" href="Styles/scores.css" />
+    <script type="text/javascript" src="Scripts/header_time.js"></script>
+    <script src="Scripts/ramda.min.js"></script>
+    <script src="Scripts/scores.js"></script>
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 2000 ); load_present_values()">
+</div>
+<div id="body">
+    <table id="board">
+        <thead>
+            <tr>
+                <td id="left_title_table">
+                    <img src="Logos/SydneyGrammar.png" id="A_image"/>
+                    <span class="right" id="A_title_text">Sydney Grammar</span>
+                </td>
+                <td class="center" id="clock_info">
+                    <span id="half_text">1st Half</span><br/>
+                    <p class="score" id="header_clock"></p>
+                </td>
+                <td id="right_title_table">
+                    <span class="left" id="B_title_text">Newington College</span>
+                    <img src="Logos/Newington.jpeg" id="B_image"/>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="score center">
+                    <span id="A_tries_score">0</span>
+                </td>
+                <td class="center">
+                    <span class="text">Tries</span>
+                </td>
+                <td class="score center">
+                    <span id="B_tries_score">0</span>
+                </td>
+            </tr>
+            <tr>
+                <td id="A_convs_score" class="score center">
+                    <span class="score">0</span>
+                </td>
+                <td class="center">
+                    <span class="text">Conversions</span>
+                </td>
+                <td class="score center">
+                    <span id="B_convs_score">0</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="score center">
+                    <span id="A_penal_score">0</span>
+                </td>
+                <td class="center">
+                    <span class="text">Penalties</span>
+                </td>
+                <td class="center score">
+                    <span id="B_penal_score">0</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="score center">
+                    <span id="A_total_score">0</span>
+                </td>
+                <td class="center">
+                    <span class="text"><b>Total</b></span>
+                </td>
+                <td class="score center">
+                    <span id="B_total_score">0</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

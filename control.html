@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Control</title>
+    <link rel="stylesheet" href="Styles/control.css"/>
+    <script src="Scripts/ramda.min.js"></script>
+    <script src="Scripts/scores.js"></script>
+    <script>
+        mode = "score";
+        function getRadioVal(form, name) {
+            var val;
+            // get list of radio buttons with specified name
+            var radios = form.elements;
+
+            // loop through list of radio buttons
+            for (var i=0, len=radios.length; i<len; i++) {
+                if ( radios[i].checked ) { // radio checked?
+                    val = radios[i].value; // if so, hold its value in val
+                    break; // and break out of for loop
+                }
+            }
+            return val; // return value of checked radio or undefined if none checked
+        }
+    </script>
+</head>
+<body onload="load_control_values()">
+<h1>Sydney Grammar School Rugby</h1>
+<form id="controlForm" onchange="localStorage.displayControl = getRadioVal(document.getElementById('controlForm'), 'display')">
+<table>
+    <tr><td colspan="3"><h3>Display Mode</h3></td></tr>
+    <tr>
+        <td>Scoreboard Mode: <input type="radio" name="display" value="score"></td>
+        <td>Results Mode: <input type="radio" name="display" value="results"></td>
+        <td>Static Mode: <input type="radio" name="display" value="static"></td>
+    </tr>
+</table>
+</form>
+<br />
+<table>
+    <thead>
+        <tr>
+            <td class="center">
+                <img src="" width="50" id="A_image_pre">
+                Image: <input onchange="image_change('A')" value="Image Sources/Sydney_Grammar_School_Logo.png" type="text" id="A_image" />
+            </td>
+            <td class="center">
+                Name: <input type="text" id="A_title_text"/>
+            </td>
+            <td class="center">
+                <h3>Teams</h3>
+                Half Text: <input type="text" id="half_text" value="1st Half"/><br/>
+                <button onclick="save_top()">Save Teams</button>
+                <button onclick="open_display()">Open Interface</button>
+            </td>
+            <td class="center">
+                Name: <input type="text" id="B_title_text"/>
+            </td>
+            <td class="center">
+                Image: <input onchange="image_change('B')" value="Image Sources/Sydney_Grammar_School_Logo.png" type="text" id="B_image" />
+                <img src="" width="50" id="B_image_pre">
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="center">
+                <button onclick="score('A_tries_score', R.add(1))">+1</button>
+                <button onclick="score('A_tries_score', R.add(-1))">-1</button>
+            </td>
+            <td class="center">
+                <span id="A_tries_score">0</span>
+            </td>
+            <td class="center">
+                Tries
+            </td>
+            <td class="center">
+                <span id="B_tries_score">0</span>
+            </td>
+            <td class="center">
+                <button onclick="score('B_tries_score', R.add(1))">+1</button>
+                <button onclick="score('B_tries_score', R.add(-1))">-1</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="center">
+                <button onclick="score('A_convs_score', R.add(1))">+1</button>
+                <button onclick="score('A_convs_score', R.add(-1))">-1</button>
+            </td>
+            <td class="center">
+                <span id="A_convs_score">0</span>
+            </td>
+            <td class="center">
+                Conversions
+            </td>
+            <td class="center">
+                <span id="B_convs_score">0</span>
+            </td>
+            <td class="center">
+                <button onclick="score('B_convs_score', R.add(1))">+1</button>
+                <button onclick="score('B_convs_score', R.add(-1))">-1</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="center">
+                <button onclick="score('A_penal_score', R.add(1))">+1</button>
+                <button onclick="score('A_penal_score', R.add(-1))">-1</button>
+            </td>
+            <td class="center">
+                <span id="A_penal_score">0</span>
+            </td>
+            <td class="center">
+                Penalty
+            </td>
+            <td class="center">
+                <span id="B_penal_score">0</span>
+            </td>
+            <td class="center">
+                <button onclick="score('B_penal_score', R.add(1))">+1</button>
+                <button onclick="score('B_penal_score', R.add(-1))">-1</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="center" colspan="2">
+                <span id="A_total_score">0</span>
+            </td>
+            <td class="center">
+                <b>Total</b>
+                <button onclick="reset()">Reset</button>
+            </td>
+            <td class="center" colspan="2">
+                <span id="B_total_score">0</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
